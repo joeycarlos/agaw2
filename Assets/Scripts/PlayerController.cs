@@ -28,7 +28,10 @@ public class PlayerController : MonoBehaviour
     void ProcessMovementInput() {
         float horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput != 0) {
-            Move(horizontalInput, moveSpeed);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Mathf.Sign(horizontalInput) * Vector2.right, (bc.bounds.size.x / 2.0f + 0.5f), LayerMask.GetMask("Wall"));
+            if (hit.collider == null) {
+                Move(horizontalInput, moveSpeed);
+            }
         }
     }
 
