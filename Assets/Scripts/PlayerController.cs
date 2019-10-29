@@ -5,10 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    private BoxCollider2D bc;
 
-    // Update is called once per frame
+    private bool inTeleporter;
+    private GameObject targetExit;
+
+    void Start() {
+        bc = GetComponent<BoxCollider2D>();
+        inTeleporter = false;
+    }
+
     void FixedUpdate() {
         ProcessMovementInput();
+    }
+
+   void Update() {
+        if (Input.GetKeyDown(KeyCode.Space) && inTeleporter == true) {
+            Teleport(targetExit);
+        }
     }
 
     void ProcessMovementInput() {
@@ -24,13 +38,25 @@ public class PlayerController : MonoBehaviour
     }
 
     void Teleport(GameObject destination) {
-        transform.position = destination.transform.position;
+
+        RaycastHit2D hit = Physics2D.Raycast(destination.transform.position, -Vector2.up, 10.0f, LayerMask.GetMask("Floor"));
+
+        Vector3 verticalOffset = new Vector3(0, -(hit.distance - bc.bounds.size.y / 2.0f), 0);
+
+        transform.position = destination.transform.position + verticalOffset;
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
-            if (Input.GetKeyDown(KeyCode.Space))
-                Teleport(collision.GetComponent<Teleporter>().exit);
+            inTeleporter = true;
+            targetExit = collision.GetComponent<Teleporter>().exit;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
+            inTeleporter = false;
+            targetExit = collision.GetComponent<Teleporter>().exit;
         }
     }
 }
