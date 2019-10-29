@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 64907320473309009}
   - component: {fileID: 5514771047532149680}
   - component: {fileID: 4298178769152112205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LivingRoomDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff50d35ee239bce4d9d373fb5f6dae8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exit: {fileID: 0}
 --- !u!61 &4298178769152112205
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -22,4 +22,15 @@ public class PlayerController : MonoBehaviour
         Vector3 moveVector = new Vector3(horizontalInput * moveSpeed * Time.deltaTime, 0, 0);
         transform.Translate(moveVector);
     }
+
+    void Teleport(GameObject destination) {
+        transform.position = destination.transform.position;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
+            if (Input.GetKeyDown(KeyCode.Space))
+                Teleport(collision.GetComponent<Teleporter>().exit);
+        }
+    }
 }
