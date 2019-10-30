@@ -17,19 +17,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int itemsGiven;
+    public int heldItem;
+
     void Awake() {
         _instance = this;
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        heldItem = 0;
+        itemsGiven = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void GiveItem() {
+        heldItem = 0;
+        itemsGiven++;
     }
 }

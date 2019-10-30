@@ -13,11 +13,17 @@ public class PlayerController : MonoBehaviour
     public bool dialogueInProgress;
     private bool dialoguePossible;
     private Dialogue targetDialogue;
+    private bool targetIsAdrian;
+
+    private bool pickupPossible;
+    private GameObject targetPickup;
+    private int pickupID;
 
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         inTeleporter = false;
         dialogueInProgress = false;
+        targetIsAdrian = false;
 
     }
 
@@ -33,6 +39,15 @@ public class PlayerController : MonoBehaviour
             dialogueInProgress = true;
         } else if (Input.GetKeyDown(KeyCode.Space) && dialogueInProgress == true) {
             DialogueManager.Instance.DisplayNextSentence();
+        } else if (Input.GetKeyDown(KeyCode.Space) && pickupPossible == true) {
+            if (GameManager.Instance.heldItem == 0) {
+                GameManager.Instance.heldItem = pickupID;
+                Debug.Log("Holding item: " + GameManager.Instance.heldItem);
+                Destroy(targetPickup);
+            } else {
+                Debug.Log("You are already holding an item! Come back later.");
+            }
+
         }
     }
 
@@ -67,10 +82,18 @@ public class PlayerController : MonoBehaviour
                 targetExit = collision.GetComponent<Teleporter>().exit;
             inTeleporter = true;
             
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC") || collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC")) {
             if (dialoguePossible == false)
                 targetDialogue = collision.GetComponent<DialogueTrigger>().dialogue;
             dialoguePossible = true;
+                
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+            if (pickupPossible == false) {
+                targetPickup = collision.gameObject;
+                pickupID = targetPickup.GetComponent<Pickup>().pickupID;
+            }
+                
+            pickupPossible = true;
                 
         }
     }
@@ -79,9 +102,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
             inTeleporter = false;
             targetExit = collision.GetComponent<Teleporter>().exit;
-        }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC") || collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC")) {
             dialoguePossible = false;
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+            pickupPossible = false;
         }
     }
 }
