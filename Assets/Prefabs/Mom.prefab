@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7479358777120186277}
   - component: {fileID: 5995794423145093164}
   - component: {fileID: 1870221010429705965}
+  - component: {fileID: 6600410587266844204}
   m_Layer: 12
   m_Name: Mom
   m_TagString: Untagged
@@ -120,3 +121,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9ebb3b172cfcc40a95faef14d3b833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6600410587266844204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045162978354847436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff94d88088f1dd429dd3ba6cc61d2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Mom
+    speakers:
+    - Max
+    - Mom
+    - Max
+    - Mom
+    - Mom
+    - Max
+    - Mom
+    sentences:
+    - Hey Mom, what's for dinner?
+    - '*crying*'
+    - Mom, what's wrong? Why are you crying?
+    - '*sobbing* It''s Adrian... I''m really worried about him.'
+    - He doesn't even want to talk. I just don't know what to do...
+    - Oh no... I'll... try to do something...
+    - '*crying*'

@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private Queue<string> sentences;
+    private Queue<string> speakers;
     private GameObject player;
 
     void Awake() {
@@ -26,13 +27,19 @@ public class DialogueManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        speakers = new Queue<string>();
         sentences = new Queue<string>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void StartDialogue(Dialogue dialogue) {
         Debug.Log("Starting conversation with " + dialogue.name);
+        speakers.Clear();
         sentences.Clear();
+
+        foreach (string speaker in dialogue.speakers) {
+            speakers.Enqueue(speaker);
+        }
 
         foreach (string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
@@ -47,8 +54,9 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        string speaker = speakers.Dequeue();
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        Debug.Log(speaker + ": " + sentence);
     }
 
     void EndDialogue() {

@@ -80,5 +80,8 @@ public class PlayerController : MonoBehaviour
             inTeleporter = false;
             targetExit = collision.GetComponent<Teleporter>().exit;
         }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC") || collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+            dialoguePossible = false;
+        }
     }
 }
