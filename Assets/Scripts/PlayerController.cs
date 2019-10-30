@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
    void Update() {
         if (Input.GetKeyDown(KeyCode.Space) && inTeleporter == true) {
             Teleport(targetExit);
-        } else if (Input.GetKeyDown(KeyCode.Space) && dialoguePossible == true) {
+        } else if (Input.GetKeyDown(KeyCode.Space) && dialoguePossible == true && dialogueInProgress == false) {
             DialogueManager.Instance.StartDialogue(targetDialogue);
             dialogueInProgress = true;
         } else if (Input.GetKeyDown(KeyCode.Space) && dialogueInProgress == true) {
@@ -68,8 +68,10 @@ public class PlayerController : MonoBehaviour
             inTeleporter = true;
             
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC") || collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
-                dialoguePossible = true;
+            if (dialoguePossible == false)
                 targetDialogue = collision.GetComponent<DialogueTrigger>().dialogue;
+            dialoguePossible = true;
+                
         }
     }
 

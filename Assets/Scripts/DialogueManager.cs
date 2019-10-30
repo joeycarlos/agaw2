@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue) {
-        Debug.Log("Able to start conversation with " + dialogue.name);
+        Debug.Log("Starting conversation with " + dialogue.name);
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences) {
