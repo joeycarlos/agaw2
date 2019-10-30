@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1887738208191699820}
   - component: {fileID: 3076784550073398334}
   - component: {fileID: 2561382491535744360}
-  m_Layer: 0
+  - component: {fileID: 254695473163353484}
+  m_Layer: 12
   m_Name: Adrian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +93,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -120,3 +121,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9ebb3b172cfcc40a95faef14d3b833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &254695473163353484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892209423151926665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff94d88088f1dd429dd3ba6cc61d2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Max
+    - Max
+    - Max
+    - Max
+    - '-'
+    - Max
+    - Adrian
+    - Max
+    - Adrian
+    sentences:
+    - '*tries to open door*'
+    - It's locked...
+    - '*knocks*'
+    - Adrian? Are you there?
+    - Let's watch that new Netflix show!
+    - '*silence*'
+    - Adrian? Hello?
+    - 'Go away. '
+    - But you said that we --
+    - GO AWAY!
