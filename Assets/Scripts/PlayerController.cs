@@ -10,18 +10,29 @@ public class PlayerController : MonoBehaviour
     private bool inTeleporter;
     private GameObject targetExit;
 
+    public bool dialogueInProgress;
+    private bool dialoguePossible;
+    private Dialogue targetDialogue;
+
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         inTeleporter = false;
+        dialogueInProgress = false;
+
     }
 
     void FixedUpdate() {
-        ProcessMovementInput();
+        if (dialogueInProgress == false) ProcessMovementInput();
     }
 
    void Update() {
         if (Input.GetKeyDown(KeyCode.Space) && inTeleporter == true) {
             Teleport(targetExit);
+        } else if (Input.GetKeyDown(KeyCode.Space) && dialoguePossible == true) {
+            DialogueManager.Instance.StartDialogue(targetDialogue);
+            dialogueInProgress = true;
+        } else if (Input.GetKeyDown(KeyCode.Space) && dialogueInProgress == true) {
+            DialogueManager.Instance.DisplayNextSentence();
         }
     }
 
@@ -50,9 +61,15 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
+        
         if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
+            if (inTeleporter == false)
+                targetExit = collision.GetComponent<Teleporter>().exit;
             inTeleporter = true;
-            targetExit = collision.GetComponent<Teleporter>().exit;
+            
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC") || collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+                dialoguePossible = true;
+                targetDialogue = collision.GetComponent<DialogueTrigger>().dialogue;
         }
     }
 

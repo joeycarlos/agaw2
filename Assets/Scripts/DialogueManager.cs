@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private Queue<string> sentences;
+    private GameObject player;
 
     void Awake() {
         _instance = this;
@@ -26,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         sentences = new Queue<string>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void StartDialogue(Dialogue dialogue) {
@@ -51,5 +53,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue() {
         Debug.Log("End conversation");
+        player.GetComponent<PlayerController>().dialogueInProgress = false;
     }
 }

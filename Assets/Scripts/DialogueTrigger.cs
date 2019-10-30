@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    /*
     public void TriggerDialogue() {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
@@ -14,4 +15,5 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             DialogueManager.Instance.StartDialogue(dialogue);
     }
+    */
 }
