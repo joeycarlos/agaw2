@@ -26,6 +26,7 @@ public class GameplayUI : MonoBehaviour
     public Image itemImage;
     public Text goalTitle;
     public Text goal;
+    public Text continueText;
 
     void Awake() {
         _instance = this;
@@ -34,5 +35,19 @@ public class GameplayUI : MonoBehaviour
     public void UpdateDialogue(string speaker, string sentence) {
         speakerName.text = speaker;
         sentenceText.text = sentence;
+    }
+
+    public void EnableDialogue() {
+        speakerName.gameObject.SetActive(true);
+        speakerPortrait.gameObject.SetActive(true);
+        sentenceText.gameObject.SetActive(true);
+        continueText.gameObject.SetActive(true);
+    }
+
+    public void DisableDialogue() {
+        speakerName.gameObject.SetActive(false);
+        speakerPortrait.gameObject.SetActive(false);
+        sentenceText.gameObject.SetActive(false);
+        continueText.gameObject.SetActive(false);
     }
 }

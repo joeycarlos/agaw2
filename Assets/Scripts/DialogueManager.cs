@@ -58,6 +58,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        GameplayUI.Instance.EnableDialogue();
         DisplayNextSentence();
     }
 
@@ -75,6 +76,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue() {
         Debug.Log("End conversation");
+        GameplayUI.Instance.DisableDialogue();
 
         if (GameManager.Instance.lastConversationPending == true) {
             GameManager.Instance.WinGame();
