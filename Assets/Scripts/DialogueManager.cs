@@ -21,6 +21,16 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> speakers;
     private GameObject player;
 
+    public GameObject adrian;
+
+    public Dialogue adrianIntroDialogue;
+    public Dialogue noItemDialogue;
+    public Dialogue basketballDialogue;
+    public Dialogue gameDialogue;
+    public Dialogue clockDialogue;
+    public Dialogue drawingDialogue;
+    public Dialogue foodDialogue;
+
     void Awake() {
         _instance = this;
     }
@@ -62,5 +72,33 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue() {
         Debug.Log("End conversation");
         player.GetComponent<PlayerController>().dialogueInProgress = false;
+    }
+
+    public void LoadAdrianDialogue(int itemID) {
+        switch (itemID) {
+            case 0:
+                adrian.GetComponent<DialogueTrigger>().dialogue = noItemDialogue;
+                break;
+            case 1:
+                adrian.GetComponent<DialogueTrigger>().dialogue = basketballDialogue;
+                break;
+            case 2:
+                adrian.GetComponent<DialogueTrigger>().dialogue = gameDialogue;
+                break;
+            case 3:
+                adrian.GetComponent<DialogueTrigger>().dialogue = clockDialogue;
+                break;
+            case 4:
+                adrian.GetComponent<DialogueTrigger>().dialogue = drawingDialogue;
+                break;
+            case 5:
+                adrian.GetComponent<DialogueTrigger>().dialogue = foodDialogue;
+                break;
+            case 6:
+                adrian.GetComponent<DialogueTrigger>().dialogue = adrianIntroDialogue;
+                break;
+
+        }
+        
     }
 }

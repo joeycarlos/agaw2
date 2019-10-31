@@ -28,10 +28,15 @@ public class GameManager : MonoBehaviour
     void Start() {
         heldItem = 0;
         itemsGiven = 0;
+        DialogueManager.Instance.LoadAdrianDialogue(6);
     }
 
     void GiveItem() {
         heldItem = 0;
         itemsGiven++;
+    }
+
+    public void UpdateAdrian(int itemID) {
+        DialogueManager.Instance.LoadAdrianDialogue(itemID);
     }
 }

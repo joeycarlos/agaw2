@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.Space) && pickupPossible == true) {
             if (GameManager.Instance.heldItem == 0) {
                 GameManager.Instance.heldItem = pickupID;
+                GameManager.Instance.UpdateAdrian(pickupID);
                 Debug.Log("Holding item: " + GameManager.Instance.heldItem);
                 Destroy(targetPickup);
             } else {

@@ -43,3 +43,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd8a65dd98d3db4ba0bc5e34848f3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adrian: {fileID: 0}
+  adrianIntroDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Max
+    - Max
+    - Max
+    - Max
+    - '-'
+    - Max
+    - Adrian
+    - Max
+    - Adrian
+    sentences:
+    - '*tries to open door* '
+    - "It\u2019s locked\u2026"
+    - '*knocks*'
+    - Adrian? Are you there?
+    - "Let\u2019s watch that new Netflix show!"
+    - '*silence*'
+    - Adrian? Hello?
+    - Go away.
+    - "But you said that we \u2013"
+    - GO AWAY!
+  noItemDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Adrian
+    sentences:
+    - Hey... Adrian?
+    - Leave me alone!
+  basketballDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Adrian
+    - Adrian
+    - Adrian
+    sentences:
+    - "Let\u2019s play basketball! The weather is so nice outside!"
+    - "I suck at basketball. I\u2019m not good enough to do that."
+    - "I\u2019m not good enough for lots of things."
+    - '*silence*'
+  gameDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Adrian
+    sentences:
+    - 'Hey Adrian! Let''s play GTA! You love that game! '
+    - 'I have so many things to study for. Maybe later. '
+  clockDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Max
+    - Max
+    - Max
+    - Max
+    - Adrian
+    sentences:
+    - "I have just the thing that will cheer you up\u2026"
+    - "Let\u2019s prank Mom and Dad! "
+    - "I stole Mom\u2019s and Dad\u2019s alarm clock."
+    - "We\u2019ll change the alarm so that they\u2019re late for work tomorrow!"
+    - "It\u2019s genius!"
+    - "Max, don\u2019t be annoying. That doesn\u2019t sound fun at all."
+  drawingDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Adrian
+    - Adrian
+    sentences:
+    - Adrian? I drew a picture for you!
+    - "That\u2019s not going to make me feel better \u2013 sorry Max."
+    - "I just don\u2019t really care about anything right now. "
+  foodDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Adrian
+    - Max
+    - Adrian
+    - Max
+    sentences:
+    - Adrian? I brought you some food.
+    - "I don\u2019t want it."
+    - "But it\u2019s your favourite food! You love Mom\u2019s beef stew!"
+    - "I\u2019m not hungry."
+    - "Fine\u2026"
