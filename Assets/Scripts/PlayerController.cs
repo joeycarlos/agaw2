@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public bool dialogueInProgress;
     private bool dialoguePossible;
     private Dialogue targetDialogue;
-    private bool targetIsAdrian;
 
     private bool pickupPossible;
     private GameObject targetPickup;
@@ -23,8 +22,6 @@ public class PlayerController : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
         inTeleporter = false;
         dialogueInProgress = false;
-        targetIsAdrian = false;
-
     }
 
     void FixedUpdate() {
