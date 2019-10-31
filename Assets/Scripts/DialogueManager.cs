@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour
 
         string speaker = speakers.Dequeue();
         string sentence = sentences.Dequeue();
+        GameplayUI.Instance.UpdateDialogue(speaker, sentence);
         Debug.Log(speaker + ": " + sentence);
     }
 
