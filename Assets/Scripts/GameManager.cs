@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool mainGameplayHasEnded = false;
     public bool lastConversationPending = false;
 
+    public GameObject[] pickups;
+
     void Awake() {
         _instance = this;
     }
@@ -55,5 +57,12 @@ public class GameManager : MonoBehaviour
         // load win game screen
         Debug.Log("YOU WIN. LOADING WIN SCREEN!");
         SceneManager.LoadScene(1);
+    }
+
+    public void EnablePickups() {
+        foreach (GameObject pickup in pickups) {
+            if (pickup != null)
+                pickup.SetActive(true);
+        }
     }
 }

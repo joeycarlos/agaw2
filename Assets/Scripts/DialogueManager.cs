@@ -79,6 +79,10 @@ public class DialogueManager : MonoBehaviour
             GameManager.Instance.WinGame();
         }
 
+        if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.itemsGiven == 0) {
+            GameManager.Instance.EnablePickups();
+        }
+
         if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.heldItem != 0) {
             Debug.Log("Giving Adrian item: " + GameManager.Instance.heldItem);
             GameManager.Instance.GiveItem();

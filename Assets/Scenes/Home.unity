@@ -126,6 +126,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1702362293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &62524219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7364116475870193384, guid: 28abc36ae678f634a9e7342127450d9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3283612604906520999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &72640299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +316,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 188444020}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &231472607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7071708135266840764, guid: 3ed6df1ad1d07f74394ea154a49977fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7071708135643074841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &273335446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3664946248985534700, guid: 319e3f2c704f925479913d20f1493fda,
@@ -327,6 +339,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 569329432931608922, guid: 35818c1c712b3cf4291f577355ec9c3a,
     type: 3}
   m_PrefabInstance: {fileID: 4185502307191209240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &301119082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5322350727893995504, guid: 9eeef2c49c881b349b8d5b2185f29af3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6855414583526998243}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &301722071
 PrefabInstance:
@@ -1487,6 +1505,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1183245621}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1229369042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1556415776170175697, guid: 8179fc6bfc7704e40887d3011dcb4186,
+    type: 3}
+  m_PrefabInstance: {fileID: 9070500536379753719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1275575145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8745290208670101512, guid: b3123e5dc76b9df4bb768d0bcec3610f,
@@ -1850,6 +1874,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94547d19f3c42334fb06dd56c4281c07, type: 3}
+--- !u!1 &1650211344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2448535765905248347, guid: 00766b25f730b9041a64423fb1dab246,
+    type: 3}
+  m_PrefabInstance: {fileID: 1128328057578220247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1674451161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5746545140019480973, guid: 8cf2ca73f3540b34f89680473438392b,
@@ -2652,6 +2682,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickupAlarmClock
       objectReference: {fileID: 0}
+    - target: {fileID: 2448535765905248347, guid: 00766b25f730b9041a64423fb1dab246,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7356737353429675631, guid: 00766b25f730b9041a64423fb1dab246,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3023,6 +3058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickupDrawing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364116475870193384, guid: 28abc36ae678f634a9e7342127450d9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7802438434181551253, guid: 28abc36ae678f634a9e7342127450d9a,
         type: 3}
@@ -3773,6 +3813,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickupVideoGame
       objectReference: {fileID: 0}
+    - target: {fileID: 5322350727893995504, guid: 9eeef2c49c881b349b8d5b2185f29af3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1564429060588310832, guid: 9eeef2c49c881b349b8d5b2185f29af3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3841,6 +3886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickupBasketball
+      objectReference: {fileID: 0}
+    - target: {fileID: 7071708135266840764, guid: 3ed6df1ad1d07f74394ea154a49977fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7071708135266840752, guid: 3ed6df1ad1d07f74394ea154a49977fb,
         type: 3}
@@ -4401,6 +4451,31 @@ PrefabInstance:
       propertyPath: adriansRoomEntrance
       value: 
       objectReference: {fileID: 1910344456}
+    - target: {fileID: 8851874336008087721, guid: aad26be92cea2f649a2e05da3dbba488,
+        type: 3}
+      propertyPath: pickups.Array.data[0]
+      value: 
+      objectReference: {fileID: 231472607}
+    - target: {fileID: 8851874336008087721, guid: aad26be92cea2f649a2e05da3dbba488,
+        type: 3}
+      propertyPath: pickups.Array.data[1]
+      value: 
+      objectReference: {fileID: 62524219}
+    - target: {fileID: 8851874336008087721, guid: aad26be92cea2f649a2e05da3dbba488,
+        type: 3}
+      propertyPath: pickups.Array.data[2]
+      value: 
+      objectReference: {fileID: 301119082}
+    - target: {fileID: 8851874336008087721, guid: aad26be92cea2f649a2e05da3dbba488,
+        type: 3}
+      propertyPath: pickups.Array.data[3]
+      value: 
+      objectReference: {fileID: 1650211344}
+    - target: {fileID: 8851874336008087721, guid: aad26be92cea2f649a2e05da3dbba488,
+        type: 3}
+      propertyPath: pickups.Array.data[4]
+      value: 
+      objectReference: {fileID: 1229369042}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad26be92cea2f649a2e05da3dbba488, type: 3}
 --- !u!1001 &8944293096127128684
@@ -4636,6 +4711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickupFood
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556415776170175697, guid: 8179fc6bfc7704e40887d3011dcb4186,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432091568275162967, guid: 8179fc6bfc7704e40887d3011dcb4186,
         type: 3}

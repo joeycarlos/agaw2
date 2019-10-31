@@ -46,3 +46,11 @@ MonoBehaviour:
   adriansRoomEntrance: {fileID: 0}
   itemsGiven: 0
   heldItem: 0
+  mainGameplayHasEnded: 0
+  lastConversationPending: 0
+  pickups:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
