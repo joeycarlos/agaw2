@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private GameObject targetExit;
 
     public bool dialogueInProgress;
-    private bool dialoguePossible;
+    public bool dialoguePossible;
     private Dialogue targetDialogue;
     public int targetNPC;
 
@@ -38,10 +38,6 @@ public class PlayerController : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.Space) && dialoguePossible == true && dialogueInProgress == false) {
             DialogueManager.Instance.StartDialogue(targetDialogue);
             dialogueInProgress = true;
-            if (targetNPC == 0 && GameManager.Instance.heldItem != 0) {
-                Debug.Log("Giving Adrian item: " + GameManager.Instance.heldItem);
-                GameManager.Instance.GiveItem();     
-            }
         } else if (Input.GetKeyDown(KeyCode.Space) && dialogueInProgress == true) {
             DialogueManager.Instance.DisplayNextSentence();
         } else if (Input.GetKeyDown(KeyCode.Space) && pickupPossible == true) {
@@ -72,7 +68,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveVector);
     }
 
-    void Teleport(GameObject destination) {
+    public void Teleport(GameObject destination) {
 
         RaycastHit2D hit = Physics2D.Raycast(destination.transform.position, -Vector2.up, 10.0f, LayerMask.GetMask("Floor"));
 

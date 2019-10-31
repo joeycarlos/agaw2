@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public GameObject adriansRoomEntrance;
+
     public int itemsGiven;
     public int heldItem;
 
@@ -45,5 +47,7 @@ public class GameManager : MonoBehaviour
 
     void InitiateEndingSequence() {
         Debug.Log("All items have been given");
+        PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player.Teleport(adriansRoomEntrance);
     }
 }

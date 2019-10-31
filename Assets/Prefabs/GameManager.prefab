@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a296d953ad86d54687e65a5c5b52c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adriansRoomEntrance: {fileID: 0}
   itemsGiven: 0
   heldItem: 0

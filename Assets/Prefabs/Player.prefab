@@ -169,4 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13751904f0f339148bca7ce728da699a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 30
+  dialogueInProgress: 0
+  dialoguePossible: 0
+  targetNPC: 0

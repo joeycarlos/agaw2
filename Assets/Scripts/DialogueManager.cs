@@ -77,6 +77,11 @@ public class DialogueManager : MonoBehaviour
         if (player.GetComponent<PlayerController>().targetNPC == 0) {
             LoadAdrianDialogue(0);
         }
+        if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.heldItem != 0) {
+            Debug.Log("Giving Adrian item: " + GameManager.Instance.heldItem);
+            GameManager.Instance.GiveItem();
+        }
+        player.GetComponent<PlayerController>().dialoguePossible = false;
     }
 
     public void LoadAdrianDialogue(int itemID) {
