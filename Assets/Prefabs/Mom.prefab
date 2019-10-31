@@ -133,21 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff94d88088f1dd429dd3ba6cc61d2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcID: 2
   dialogue:
-    name: Mom
-    speakers:
-    - Max
-    - Mom
-    - Max
-    - Mom
-    - Mom
-    - Max
-    - Mom
-    sentences:
-    - Hey Mom, what's for dinner?
-    - '*crying*'
-    - Mom, what's wrong? Why are you crying?
-    - '*sobbing* It''s Adrian... I''m really worried about him.'
-    - He doesn't even want to talk. I just don't know what to do...
-    - Oh no... I'll... try to do something...
-    - '*crying*'
+    name: 
+    speakers: []
+    sentences: []

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool dialogueInProgress;
     private bool dialoguePossible;
     private Dialogue targetDialogue;
+    public int targetNPC;
 
     private bool pickupPossible;
     private GameObject targetPickup;
@@ -34,6 +35,10 @@ public class PlayerController : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.Space) && dialoguePossible == true && dialogueInProgress == false) {
             DialogueManager.Instance.StartDialogue(targetDialogue);
             dialogueInProgress = true;
+            if (targetNPC == 0 && GameManager.Instance.heldItem != 0) {
+                Debug.Log("Giving Adrian item: " + GameManager.Instance.heldItem);
+                GameManager.Instance.GiveItem();     
+            }
         } else if (Input.GetKeyDown(KeyCode.Space) && dialogueInProgress == true) {
             DialogueManager.Instance.DisplayNextSentence();
         } else if (Input.GetKeyDown(KeyCode.Space) && pickupPossible == true) {
@@ -81,8 +86,11 @@ public class PlayerController : MonoBehaviour
             inTeleporter = true;
             
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC")) {
-            if (dialoguePossible == false)
+            if (dialoguePossible == false) {
                 targetDialogue = collision.GetComponent<DialogueTrigger>().dialogue;
+                targetNPC = collision.GetComponent<DialogueTrigger>().npcID;
+            }
+                
             dialoguePossible = true;
                 
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {

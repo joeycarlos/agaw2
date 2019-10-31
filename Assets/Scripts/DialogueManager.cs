@@ -72,6 +72,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue() {
         Debug.Log("End conversation");
         player.GetComponent<PlayerController>().dialogueInProgress = false;
+        if (player.GetComponent<PlayerController>().targetNPC == 0) {
+            LoadAdrianDialogue(0);
+        }
     }
 
     public void LoadAdrianDialogue(int itemID) {

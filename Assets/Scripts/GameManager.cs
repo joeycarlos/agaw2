@@ -31,12 +31,19 @@ public class GameManager : MonoBehaviour
         DialogueManager.Instance.LoadAdrianDialogue(6);
     }
 
-    void GiveItem() {
+    public void GiveItem() {
         heldItem = 0;
         itemsGiven++;
+        if (itemsGiven == 5) {
+            InitiateEndingSequence();
+        }
     }
 
     public void UpdateAdrian(int itemID) {
         DialogueManager.Instance.LoadAdrianDialogue(itemID);
+    }
+
+    void InitiateEndingSequence() {
+        Debug.Log("All items have been given");
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    public int npcID;
+
     public Dialogue dialogue;
 
     /*

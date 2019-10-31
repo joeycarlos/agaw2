@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff94d88088f1dd429dd3ba6cc61d2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcID: 1
   dialogue:
     name: Dad
     speakers:
