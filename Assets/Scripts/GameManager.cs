@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public int itemsGiven;
     public int heldItem;
+    public bool mainGameplayHasEnded = false;
+    public bool lastConversationPending = false;
 
     void Awake() {
         _instance = this;
@@ -36,18 +39,21 @@ public class GameManager : MonoBehaviour
     public void GiveItem() {
         heldItem = 0;
         itemsGiven++;
-        if (itemsGiven == 5) {
-            InitiateEndingSequence();
-        }
     }
 
     public void UpdateAdrian(int itemID) {
         DialogueManager.Instance.LoadAdrianDialogue(itemID);
     }
 
-    void InitiateEndingSequence() {
-        Debug.Log("All items have been given");
+    public void GoToAdriansRoom() {
         PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.Teleport(adriansRoomEntrance);
+        lastConversationPending = true;
+    }
+
+    public void WinGame() {
+        // load win game screen
+        Debug.Log("YOU WIN. LOADING WIN SCREEN!");
+        SceneManager.LoadScene(1);
     }
 }

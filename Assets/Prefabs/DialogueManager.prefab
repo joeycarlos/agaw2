@@ -136,6 +136,32 @@ MonoBehaviour:
     - "But it\u2019s your favourite food! You love Mom\u2019s beef stew!"
     - "I\u2019m not hungry."
     - "Fine\u2026"
+  openDoorDialogue:
+    name: Adrian
+    speakers:
+    - Max
+    - Max
+    - Max
+    - Max
+    - '-'
+    - Adrian
+    - Max
+    - Max
+    - Adrian
+    - Adrian
+    - Adrian
+    sentences:
+    - I give up...
+    - I don't know what else to do...
+    - I miss you Adrian... all I wanted to do was play.
+    - I'll just sit here and wait and keep you some company.
+    - '*a few minutes later*'
+    - Max, are you still outside?
+    - Yeah, I'm here. Just worried about you.
+    - Do you want to talk about anything?
+    - Yeah... I think that would be good...
+    - Here, let me unlock the door.
+    - '*unlocks the door*'
   introDialogue:
     name: Intro
     speakers:

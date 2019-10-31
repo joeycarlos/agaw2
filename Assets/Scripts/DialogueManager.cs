@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
     public Dialogue clockDialogue;
     public Dialogue drawingDialogue;
     public Dialogue foodDialogue;
+    public Dialogue openDoorDialogue;
 
     public Dialogue introDialogue;
 
@@ -73,15 +74,33 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue() {
         Debug.Log("End conversation");
-        player.GetComponent<PlayerController>().dialogueInProgress = false;
-        if (player.GetComponent<PlayerController>().targetNPC == 0) {
-            LoadAdrianDialogue(0);
+
+        if (GameManager.Instance.lastConversationPending == true) {
+            GameManager.Instance.WinGame();
         }
+
         if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.heldItem != 0) {
             Debug.Log("Giving Adrian item: " + GameManager.Instance.heldItem);
             GameManager.Instance.GiveItem();
         }
-        player.GetComponent<PlayerController>().dialoguePossible = false;
+
+        if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.itemsGiven == 5 && GameManager.Instance.mainGameplayHasEnded == false) {
+            StartDialogue(openDoorDialogue);
+            GameManager.Instance.mainGameplayHasEnded = true;
+            return;
+        } else {
+            player.GetComponent<PlayerController>().dialogueInProgress = false;
+        }
+            
+
+        if (GameManager.Instance.mainGameplayHasEnded == true) {
+            GameManager.Instance.GoToAdriansRoom();
+        } else {
+            player.GetComponent<PlayerController>().dialoguePossible = false;
+        }
+        if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.mainGameplayHasEnded == false) {
+            LoadAdrianDialogue(0);
+        }
     }
 
     public void LoadAdrianDialogue(int itemID) {
