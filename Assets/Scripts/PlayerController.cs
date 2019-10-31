@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         inTeleporter = false;
-        dialogueInProgress = false;
+        targetNPC = 5; // some random number
+
+        DialogueManager.Instance.StartDialogue(DialogueManager.Instance.introDialogue);
+        dialogueInProgress = true;
     }
 
     void FixedUpdate() {

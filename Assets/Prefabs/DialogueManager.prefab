@@ -136,3 +136,13 @@ MonoBehaviour:
     - "But it\u2019s your favourite food! You love Mom\u2019s beef stew!"
     - "I\u2019m not hungry."
     - "Fine\u2026"
+  introDialogue:
+    name: Intro
+    speakers:
+    - Max
+    - Max
+    - Max
+    sentences:
+    - '... FINALLY, I''m home! Time to rest...'
+    - "I wonder if my brother is here\u2026? "
+    - "Adrian said last week that we\u2019d watch that new show on Netflix!"

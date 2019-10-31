@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     public Dialogue drawingDialogue;
     public Dialogue foodDialogue;
 
+    public Dialogue introDialogue;
+
     void Awake() {
         _instance = this;
     }
