@@ -36,6 +36,11 @@ public class GameplayUI : MonoBehaviour
     public Sprite food;
     public Sprite drawing;
 
+    public Sprite maxPortrait;
+    public Sprite adrianPortrait;
+    public Sprite momPortrait;
+    public Sprite dadPortrait;
+
     void Awake() {
         _instance = this;
     }
@@ -47,6 +52,18 @@ public class GameplayUI : MonoBehaviour
     public void UpdateDialogue(string speaker, string sentence) {
         speakerName.text = speaker;
         sentenceText.text = sentence;
+        speakerPortrait.gameObject.SetActive(true);
+        if (speaker == "Max") {
+            speakerPortrait.sprite = maxPortrait;
+        } else if (speaker == "Adrian" ) {
+            speakerPortrait.sprite = adrianPortrait;
+        } else if (speaker == "Mom") {
+            speakerPortrait.sprite = momPortrait;
+        } else if (speaker == "Dad") {
+            speakerPortrait.sprite = dadPortrait;
+        } else if (speaker == "") {
+            speakerPortrait.gameObject.SetActive(false);
+        }
     }
 
     public void EnableDialogue() {
