@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     public void Teleport(GameObject destination) {
 
-        RaycastHit2D hit = Physics2D.Raycast(destination.transform.position, -Vector2.up, 10.0f, LayerMask.GetMask("Floor"));
+        RaycastHit2D hit = Physics2D.Raycast(destination.transform.position, -Vector2.up, 15.0f, LayerMask.GetMask("Floor"));
 
         Vector3 verticalOffset = new Vector3(0, -(hit.distance - bc.bounds.size.y / 2.0f), 0);
 
