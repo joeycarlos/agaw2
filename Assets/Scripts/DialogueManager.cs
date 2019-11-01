@@ -82,8 +82,14 @@ public class DialogueManager : MonoBehaviour
             GameManager.Instance.WinGame();
         }
 
+        if (player.GetComponent<PlayerController>().targetNPC == 5 && GameManager.Instance.itemsGiven == 0) {
+            GameplayUI.Instance.EnableGoal();
+            GameplayUI.Instance.UpdateGoal("Find your brother.");
+        }
+
         if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.itemsGiven == 0) {
             GameManager.Instance.EnablePickups();
+            GameplayUI.Instance.UpdateGoal("Find a way to help your brother.");
         }
 
         if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.heldItem != 0) {
@@ -102,6 +108,7 @@ public class DialogueManager : MonoBehaviour
 
         if (GameManager.Instance.mainGameplayHasEnded == true) {
             GameManager.Instance.GoToAdriansRoom();
+            GameplayUI.Instance.UpdateGoal("Console your brother in his room.");
         } else {
             player.GetComponent<PlayerController>().dialoguePossible = false;
         }

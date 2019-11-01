@@ -27,6 +27,8 @@ public class GameplayUI : MonoBehaviour
     public Text goalTitle;
     public Text goal;
     public Text continueText;
+    public Image dialogueContainer;
+    public Image goalContainer;
 
     public Sprite basketball;
     public Sprite game;
@@ -52,6 +54,7 @@ public class GameplayUI : MonoBehaviour
         speakerPortrait.gameObject.SetActive(true);
         sentenceText.gameObject.SetActive(true);
         continueText.gameObject.SetActive(true);
+        dialogueContainer.gameObject.SetActive(true);
     }
 
     public void DisableDialogue() {
@@ -59,6 +62,7 @@ public class GameplayUI : MonoBehaviour
         speakerPortrait.gameObject.SetActive(false);
         sentenceText.gameObject.SetActive(false);
         continueText.gameObject.SetActive(false);
+        dialogueContainer.gameObject.SetActive(false);
     }
 
     public void UpdateHeldItem(int itemID) {
@@ -93,5 +97,21 @@ public class GameplayUI : MonoBehaviour
                 itemImage.sprite = food;
                 break;
         }
+    }
+
+    public void DisableGoal() {
+        goalContainer.gameObject.SetActive(false);
+        goal.gameObject.SetActive(false);
+        goalTitle.gameObject.SetActive(false);
+    }
+
+    public void EnableGoal() {
+        goalContainer.gameObject.SetActive(goal);
+        goal.gameObject.SetActive(goal);
+        goalTitle.gameObject.SetActive(goal);
+    }
+
+    public void UpdateGoal(string newGoal) {
+        goal.text = newGoal;
     }
 }

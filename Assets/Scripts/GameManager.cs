@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         heldItem = 0;
         itemsGiven = 0;
         DialogueManager.Instance.LoadAdrianDialogue(6);
+        GameplayUI.Instance.DisableGoal();
     }
 
     public void GiveItem() {
