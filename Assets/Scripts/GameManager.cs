@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void GiveItem() {
         heldItem = 0;
+        GameplayUI.Instance.UpdateHeldItem(0);
         itemsGiven++;
     }
 

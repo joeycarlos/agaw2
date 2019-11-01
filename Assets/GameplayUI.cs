@@ -28,8 +28,18 @@ public class GameplayUI : MonoBehaviour
     public Text goal;
     public Text continueText;
 
+    public Sprite basketball;
+    public Sprite game;
+    public Sprite alarmClock;
+    public Sprite food;
+    public Sprite drawing;
+
     void Awake() {
         _instance = this;
+    }
+
+    void Start() {
+        UpdateHeldItem(0);
     }
 
     public void UpdateDialogue(string speaker, string sentence) {
@@ -49,5 +59,39 @@ public class GameplayUI : MonoBehaviour
         speakerPortrait.gameObject.SetActive(false);
         sentenceText.gameObject.SetActive(false);
         continueText.gameObject.SetActive(false);
+    }
+
+    public void UpdateHeldItem(int itemID) {
+        switch (itemID) {
+            case 0:
+                itemName.text = "";
+                itemImage.gameObject.SetActive(false);
+                break;
+            case 1:
+                itemImage.gameObject.SetActive(true);
+                itemName.text = "Basketball";
+                itemImage.sprite = basketball;
+                break;
+            case 2:
+                itemImage.gameObject.SetActive(true);
+                itemName.text = "Video Game";
+                itemImage.sprite = game;
+                break;
+            case 3:
+                itemImage.gameObject.SetActive(true);
+                itemName.text = "Alarm Clock";
+                itemImage.sprite = alarmClock;
+                break;
+            case 4:
+                itemImage.gameObject.SetActive(true);
+                itemName.text = "Drawing";
+                itemImage.sprite = drawing;
+                break;
+            case 5:
+                itemImage.gameObject.SetActive(true);
+                itemName.text = "Food";
+                itemImage.sprite = food;
+                break;
+        }
     }
 }

@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             if (GameManager.Instance.heldItem == 0) {
                 GameManager.Instance.heldItem = pickupID;
                 GameManager.Instance.UpdateAdrian(pickupID);
+                GameplayUI.Instance.UpdateHeldItem(pickupID);
                 Debug.Log("Holding item: " + GameManager.Instance.heldItem);
                 Destroy(targetPickup);
             } else {
