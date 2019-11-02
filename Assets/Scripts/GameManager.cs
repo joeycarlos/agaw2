@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     public void WinGame() {
         // load win game screen
         Debug.Log("YOU WIN. LOADING WIN SCREEN!");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void EnablePickups() {

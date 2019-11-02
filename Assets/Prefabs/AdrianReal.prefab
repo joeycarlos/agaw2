@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: b9a023854cf972c46b7e5252435c733d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,7 +125,13 @@ MonoBehaviour:
     name: Adrian Real
     speakers:
     - Max
+    - Max
+    - Max
+    - Adrian
     - Adrian
     sentences:
-    - This is the final conversation
-    - THE END!
+    - 'Hey Adrian... it''s good to finally see you. '
+    - We don't have to do anything if you don't want to.
+    - Do you mind if I just sit here with you?
+    - '... Yeah, I think I could use the company.'
+    - Thanks Max... you're a good brother.
