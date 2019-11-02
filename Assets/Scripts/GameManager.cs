@@ -29,13 +29,14 @@ public class GameManager : MonoBehaviour
 
     void Awake() {
         _instance = this;
+        DialogueManager.Instance.LoadAdrianDialogue(6);
     }
 
     // Start is called before the first frame update
     void Start() {
         heldItem = 0;
         itemsGiven = 0;
-        DialogueManager.Instance.LoadAdrianDialogue(6);
+
         GameplayUI.Instance.DisableGoal();
     }
 

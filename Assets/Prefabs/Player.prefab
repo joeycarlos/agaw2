@@ -173,3 +173,5 @@ MonoBehaviour:
   dialogueInProgress: 0
   dialoguePossible: 0
   targetNPC: 0
+  arrowIndicator: {fileID: 8870811090316589433, guid: c41f84ff6fd1d884c9ef450b9cfd1c39,
+    type: 3}

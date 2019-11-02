@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private GameObject targetPickup;
     private int pickupID;
 
+    public GameObject arrowIndicator;
+    private GameObject iArrowIndicator;
+
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         inTeleporter = false;
@@ -81,14 +84,19 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision) {
         
         if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
-            if (inTeleporter == false)
+            if (inTeleporter == false) {
                 targetExit = collision.GetComponent<Teleporter>().exit;
+                if (iArrowIndicator == null)
+                    iArrowIndicator = Instantiate(arrowIndicator, collision.gameObject.transform.position + new Vector3(0, 12.0f, 0), Quaternion.identity);
+            }
             inTeleporter = true;
             
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC")) {
             if (dialoguePossible == false) {
                 targetDialogue = collision.GetComponent<DialogueTrigger>().dialogue;
                 targetNPC = collision.GetComponent<DialogueTrigger>().npcID;
+                if (iArrowIndicator == null)
+                    iArrowIndicator = Instantiate(arrowIndicator, collision.gameObject.transform.position + new Vector3(0, 12.0f, 0), Quaternion.identity);
             }
                 
             dialoguePossible = true;
@@ -97,6 +105,8 @@ public class PlayerController : MonoBehaviour
             if (pickupPossible == false) {
                 targetPickup = collision.gameObject;
                 pickupID = targetPickup.GetComponent<Pickup>().pickupID;
+                if (iArrowIndicator == null)
+                    iArrowIndicator = Instantiate(arrowIndicator, collision.gameObject.transform.position + new Vector3(0, 12.0f, 0), Quaternion.identity);
             }
                 
             pickupPossible = true;
@@ -108,10 +118,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Teleporter")) {
             inTeleporter = false;
             targetExit = collision.GetComponent<Teleporter>().exit;
+            Destroy(iArrowIndicator);
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("NPC")) {
             dialoguePossible = false;
+            Destroy(iArrowIndicator);
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
             pickupPossible = false;
+            Destroy(iArrowIndicator);
         }
     }
 }
