@@ -48,11 +48,8 @@ public class PlayerController : MonoBehaviour
                 GameManager.Instance.heldItem = pickupID;
                 GameManager.Instance.UpdateAdrian(pickupID);
                 GameplayUI.Instance.UpdateHeldItem(pickupID);
-                Debug.Log("Holding item: " + GameManager.Instance.heldItem);
                 Destroy(targetPickup);
-            } else {
-                Debug.Log("You are already holding an item! Come back later.");
-            }
+            } 
 
         }
     }

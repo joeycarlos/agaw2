@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
 
     public void WinGame() {
         // load win game screen
-        Debug.Log("YOU WIN. LOADING WIN SCREEN!");
         SceneManager.LoadScene(2);
     }
 

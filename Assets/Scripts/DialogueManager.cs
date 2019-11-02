@@ -46,7 +46,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue) {
-        Debug.Log("Starting conversation with " + dialogue.name);
         speakers.Clear();
         sentences.Clear();
 
@@ -71,11 +70,9 @@ public class DialogueManager : MonoBehaviour
         string speaker = speakers.Dequeue();
         string sentence = sentences.Dequeue();
         GameplayUI.Instance.UpdateDialogue(speaker, sentence);
-        Debug.Log(speaker + ": " + sentence);
     }
 
     void EndDialogue() {
-        Debug.Log("End conversation");
         GameplayUI.Instance.DisableDialogue();
 
         if (GameManager.Instance.lastConversationPending == true) {
@@ -93,7 +90,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         if (player.GetComponent<PlayerController>().targetNPC == 0 && GameManager.Instance.heldItem != 0) {
-            Debug.Log("Giving Adrian item: " + GameManager.Instance.heldItem);
             GameManager.Instance.GiveItem();
         }
 
