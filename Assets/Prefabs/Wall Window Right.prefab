@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 1617856903993641848, guid: 94547d19f3c42334fb06dd56c4281c07,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.469999
+      value: -35.7
       objectReference: {fileID: 0}
     - target: {fileID: 1617856903993641848, guid: 94547d19f3c42334fb06dd56c4281c07,
         type: 3}
@@ -77,6 +77,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788032607971669717, guid: 94547d19f3c42334fb06dd56c4281c07,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1628362
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788032607971669717, guid: 94547d19f3c42334fb06dd56c4281c07,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.13569677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788032607971669717, guid: 94547d19f3c42334fb06dd56c4281c07,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.1398637
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788032607971669717, guid: 94547d19f3c42334fb06dd56c4281c07,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 6.5907583
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94547d19f3c42334fb06dd56c4281c07, type: 3}
